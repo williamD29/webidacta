@@ -1,8 +1,12 @@
 <template>
     <div class="w-full flex bg-gray-50">
-        <Sidebar class="flex-shrink-0" />
-        <Navbar />
-        <nuxt />
+        <Sidebar class="h-screen" />
+        <div class="flex flex-col flex-grow">
+            <Navbar />
+            <div class="container mx-auto">
+                <nuxt />
+            </div>
+        </div>
     </div>
 </template>
 
@@ -17,6 +21,9 @@ export default {
         Navbar
     },
     mounted() {
+        feather.replace()
+    },
+    updated() {
         feather.replace()
     }
 }

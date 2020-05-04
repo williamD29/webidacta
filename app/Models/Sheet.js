@@ -13,9 +13,9 @@ class Sheet extends Model {
     }
 
     students() {
-        return this.belongsToMany('App/Models/Student').pivotTable(
-            'sheet_student'
-        )
+        return this.belongsToMany('App/Models/Student')
+            .pivotTable('sheet_students')
+            .withTimestamps()
     }
 
     group() {

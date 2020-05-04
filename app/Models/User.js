@@ -3,32 +3,40 @@
 const Model = use('Model')
 
 class User extends Model {
-  static boot() {
-    super.boot()
+    static boot() {
+        super.boot()
+
+        /**
+         * A hook to bash the user password before saving
+         * it to the database.
+         *
+         * Look at `app/Models/Hooks/User.js` file to
+         * check the hashPassword method
+         */
+        this.addHook('beforeSave', 'User.hashPassword')
+    }
 
     /**
-     * A hook to bash the user password before saving
-     * it to the database.
+     * A relationship on tokens is required for auth to
+     * work. Since features like `refreshTokens` or
+     * `rememberToken` will be saved inside the
+     * tokens table.
      *
-     * Look at `app/Models/Hooks/User.js` file to
-     * check the hashPassword method
+     * @method tokens
+     *
+     * @return {Object}
      */
-    this.addHook('beforeSave', 'User.hashPassword')
-  }
+    tokens() {
+        return this.hasMany('App/Models/Token')
+    }
 
-  /**
-   * A relationship on tokens is required for auth to
-   * work. Since features like `refreshTokens` or
-   * `rememberToken` will be saved inside the
-   * tokens table.
-   *
-   * @method tokens
-   *
-   * @return {Object}
-   */
-  tokens() {
-    return this.hasMany('App/Models/Token')
-  }
+    students() {
+        return this.hasMany('App/Models/Student')
+    }
+
+    sheets() {
+        return this.hasMany('App/Models/Sheet')
+    }
 }
 
 module.exports = User

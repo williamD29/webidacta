@@ -10,7 +10,7 @@ class SeriesSchema extends Schema {
                 .integer('series_number')
                 .unsigned()
                 .notNullable()
-                .primary(['series_number'])
+                .primary('series_number')
             table.timestamps()
         })
     }

@@ -10,7 +10,7 @@ class GroupSchema extends Schema {
                 .integer('group_number')
                 .unsigned()
                 .notNullable()
-                .primary(['group_number'])
+                .primary('group_number')
             table.timestamps()
         })
     }

@@ -4,6 +4,9 @@
 const Model = use('Model')
 
 class Avatar extends Model {
+    students() {
+        return this.hasOne('App/Models/Student')
+    }
 }
 
 module.exports = Avatar

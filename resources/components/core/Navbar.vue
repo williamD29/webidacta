@@ -1,16 +1,9 @@
 <template>
     <div
-        class="lg:pl-0 sm:pl-16 pl-14 h-16 bg-white sm:pr-8 pr-3 border-b border-gray-200 shadow w-full flex items-center justify-between"
+        class="lg:pl-0 sm:pl-16 pl-14 h-16 bg-white sm:pr-8 pr-3 border-b border-cool-gray-200 shadow w-full flex items-center justify-between"
     >
-        <div
-            class="flex items-center px-4 lg:w-1/3 md:w-full h-full focus:shadow-outline-purple"
-        >
-            <i
-                data-feather="search"
-                height="20"
-                width="20"
-                class="text-gray-400 h-6 w-6"
-            ></i>
+        <div class="flex items-center px-4 lg:w-1/3 md:w-full h-full focus:shadow-outline-purple">
+            <i data-feather="search" height="20" width="20" class="text-cool-gray-400 h-6 w-6"></i>
             <input
                 class="form-input h-full p-0 block pl-4 focus:shadow-none border-none w-full"
                 placeholder="Rechercher"
@@ -19,7 +12,7 @@
         <div class="block flex-shrink-0">
             <div class="ml-4 flex items-center md:ml-6">
                 <button
-                    class="p-1 border-2 border-transparent text-gray-400 rounded-full hover:text-gray-500 focus:outline-none focus:text-gray-500 focus:bg-gray-100"
+                    class="p-1 border-2 border-transparent text-cool-gray-400 rounded-full hover:text-cool-gray-500 focus:outline-none focus:text-cool-gray-500 focus:bg-cool-gray-100"
                     aria-label="Notifications"
                 >
                     <i data-feather="bell" class="h-6 w-6"></i>
@@ -65,18 +58,14 @@
                                 aria-labelledby="user-menu"
                             >
                                 <div
-                                    class="px-4 py-2 text-xs text-gray-700 border-b border-gray-100 mb-1"
+                                    class="px-4 py-2 text-xs text-cool-gray-700 border-b border-cool-gray-100 mb-1"
                                 >
-                                    <span class="block"
-                                        >Connecté en tant que</span
-                                    >
-                                    <span class="block font-medium"
-                                        >william.donval@gmail.com</span
-                                    >
+                                    <span class="block">Connecté en tant que</span>
+                                    <span class="block font-medium">william.donval@gmail.com</span>
                                 </div>
                                 <a
                                     href="#"
-                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex mt-1"
+                                    class="block px-4 py-2 text-sm text-cool-gray-700 hover:bg-cool-gray-100 flex mt-1"
                                     role="menuitem"
                                 >
                                     <i
@@ -84,13 +73,12 @@
                                         height="18"
                                         width="18"
                                         stroke-width="1.5"
-                                        class="text-gray-700 mr-4 self-center"
-                                    ></i
-                                    >Mon profil
+                                        class="text-cool-gray-700 mr-4 self-center"
+                                    ></i>Mon profil
                                 </a>
                                 <a
                                     href="#"
-                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex"
+                                    class="block px-4 py-2 text-sm text-cool-gray-700 hover:bg-cool-gray-100 flex"
                                     role="menuitem"
                                 >
                                     <i
@@ -98,9 +86,8 @@
                                         height="18"
                                         width="18"
                                         stroke-width="1.5"
-                                        class="text-gray-700 mr-4 self-center"
-                                    ></i
-                                    >Paramètres
+                                        class="text-cool-gray-700 mr-4 self-center"
+                                    ></i>Paramètres
                                 </a>
                                 <a
                                     href="#"
@@ -113,8 +100,7 @@
                                         width="18"
                                         stroke-width="1.5"
                                         class="text-red-700 mr-4 self-center"
-                                    ></i
-                                    >Se déconnecter
+                                    ></i>Se déconnecter
                                 </a>
                             </div>
                         </div>
@@ -127,11 +113,11 @@
 
 <script>
 export default {
-    data() {
-        return {
-            isDropdownOpen: false
-        }
-    }
+	data() {
+		return {
+			isDropdownOpen: false
+		}
+	}
 }
 </script>
 

@@ -25,6 +25,7 @@
         "@adonisjs/shield": "^1.0.4",
         "@nuxtjs/axios": "^5.10.3",
         "@tailwindcss/ui": "^0.3.0",
+        "axios": "^0.19.2",
         "cross-env": "^5.2.0",
         "feather-icons": "^4.28.0",
         "node-sass": "^4.14.0",

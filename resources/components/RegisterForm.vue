@@ -29,6 +29,11 @@
                         >
                         <input
                             type="text"
+                            :class="[
+                                formErrors.firstname
+                                    ? 'border-red-300 shadow-outline-red'
+                                    : ''
+                            ]"
                             class="form-input mt-1 block w-full focus:shadow-outline-purple focus:border-purple-300 transition duration-150 ease-in-out"
                         />
                         <div
@@ -42,6 +47,11 @@
                         <span class="text-cool-gray-700 font-medium">Nom</span>
                         <input
                             type="text"
+                            :class="[
+                                formErrors.name
+                                    ? 'border-red-300 shadow-outline-red'
+                                    : ''
+                            ]"
                             class="form-input mt-1 block w-full focus:shadow-outline-purple focus:border-purple-300 transition duration-150 ease-in-out"
                         />
                         <div
@@ -58,6 +68,11 @@
                     >
                     <input
                         type="email"
+                        :class="[
+                            formErrors.email
+                                ? 'border-red-300 shadow-outline-red'
+                                : ''
+                        ]"
                         class="form-input mt-1 block w-full focus:shadow-outline-purple focus:border-purple-300 transition duration-150 ease-in-out"
                     />
                     <div
@@ -73,6 +88,11 @@
                     >
                     <input
                         type="password"
+                        :class="[
+                            formErrors.password
+                                ? 'border-red-300 shadow-outline-red'
+                                : ''
+                        ]"
                         class="form-input mt-1 block w-full focus:shadow-outline-purple focus:border-purple-300 transition duration-150 ease-in-out"
                     />
                     <div
@@ -88,6 +108,11 @@
                     >
                     <input
                         type="password"
+                        :class="[
+                            formErrors.password_confirmation
+                                ? 'border-red-300 shadow-outline-red'
+                                : ''
+                        ]"
                         class="form-input mt-1 block w-full focus:shadow-outline-purple focus:border-purple-300 transition duration-150 ease-in-out"
                     />
                     <div

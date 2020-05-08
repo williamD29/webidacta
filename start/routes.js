@@ -16,7 +16,8 @@
 const Route = use('Route')
 
 Route.group(() => {
-    Route.get('test', 'UserController.test')
+    Route.get('test', 'UserController.test') // .middleware(['auth'])
+    Route.post('register', 'Auth/RegisterController.register')
 }).prefix('api')
 
 Route.any('*', 'NuxtController.render')

@@ -1,72 +1,129 @@
 <template>
     <div class="max-w-lg">
-        <nuxt-link to class="flex justify-center h-16 items-center px-2 text-2xl font-bold">
-            <img src="@/assets/images/webidacta-logo.svg" class="h-12 w-12" alt="Logo Webidacta" />
-        </nuxt-link>
+        <div
+            class="flex justify-center h-16 items-center px-2 text-2xl font-bold"
+        >
+            <nuxt-link to>
+                <img
+                    src="@/assets/images/webidacta-logo.svg"
+                    class="h-12 w-12"
+                    alt="Logo Webidacta"
+                />
+            </nuxt-link>
+        </div>
         <h2 class="text-center text-4xl font-bold mb-4">Inscription</h2>
         <div class="mb-8 text-center">
             Déjà inscrit ?
             <nuxt-link
                 to="login"
                 class="font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:underline transition ease-in-out duration-150"
-            >Connectez-vous</nuxt-link>
+                >Connectez-vous</nuxt-link
+            >
         </div>
         <div class="sm:px-12 px-8 py-8 bg-white shadow-md rounded-lg w-auto">
-            <form class="space-y-6">
+            <form class="space-y-6" @submit.prevent="register">
                 <div class="flex space-x-4">
                     <label class="block w-1/2">
-                        <span class="text-cool-gray-700 font-medium">Prénom</span>
+                        <span class="text-cool-gray-700 font-medium"
+                            >Prénom</span
+                        >
                         <input
-                            type="email"
+                            type="text"
                             class="form-input mt-1 block w-full focus:shadow-outline-purple focus:border-purple-300 transition duration-150 ease-in-out"
                         />
+                        <div
+                            v-if="formErrors.firstname"
+                            class="text-red-600 text-sm mt-1"
+                        >
+                            {{ formErrors.firstname[0] }}
+                        </div>
                     </label>
                     <label class="block w-1/2">
                         <span class="text-cool-gray-700 font-medium">Nom</span>
                         <input
-                            type="email"
+                            type="text"
                             class="form-input mt-1 block w-full focus:shadow-outline-purple focus:border-purple-300 transition duration-150 ease-in-out"
                         />
+                        <div
+                            v-if="formErrors.name"
+                            class="text-red-600 text-sm mt-1"
+                        >
+                            {{ formErrors.name[0] }}
+                        </div>
                     </label>
                 </div>
                 <label class="block">
-                    <span class="text-cool-gray-700 font-medium">Adresse email</span>
+                    <span class="text-cool-gray-700 font-medium"
+                        >Adresse email</span
+                    >
                     <input
                         type="email"
                         class="form-input mt-1 block w-full focus:shadow-outline-purple focus:border-purple-300 transition duration-150 ease-in-out"
                     />
+                    <div
+                        v-if="formErrors.email"
+                        class="text-red-600 text-sm mt-1"
+                    >
+                        {{ formErrors.email[0] }}
+                    </div>
                 </label>
                 <label class="block">
-                    <span class="text-cool-gray-700 font-medium">Mot de passe</span>
+                    <span class="text-cool-gray-700 font-medium"
+                        >Mot de passe</span
+                    >
                     <input
-                        type="email"
+                        type="password"
                         class="form-input mt-1 block w-full focus:shadow-outline-purple focus:border-purple-300 transition duration-150 ease-in-out"
                     />
+                    <div
+                        v-if="formErrors.password"
+                        class="text-red-600 text-sm mt-1"
+                    >
+                        {{ formErrors.password[0] }}
+                    </div>
                 </label>
                 <label class="block">
-                    <span class="text-cool-gray-700 font-medium">Confirmation du mot de passe</span>
+                    <span class="text-cool-gray-700 font-medium"
+                        >Confirmation du mot de passe</span
+                    >
                     <input
-                        type="email"
+                        type="password"
                         class="form-input mt-1 block w-full focus:shadow-outline-purple focus:border-purple-300 transition duration-150 ease-in-out"
                     />
+                    <div
+                        v-if="formErrors.password_confirmation"
+                        class="text-red-600 text-sm mt-1"
+                    >
+                        {{ formErrors.password_confirmation[0] }}
+                    </div>
                 </label>
                 <div></div>
                 <button
-                    type="button"
+                    type="submit"
                     class="flex w-full items-center justify-center px-4 py-2 border border-transparent font-medium rounded-md text-white bg-purple-600 hover:bg-purple-500 focus:outline-none focus:shadow-outline-purple focus:border-purple-700 active:bg-purple-700 transition duration-150 ease-in-out"
-                >S'inscrire</button>
+                >
+                    S'inscrire
+                </button>
                 <div class="mt-6">
                     <div class="relative">
                         <div class="absolute inset-0 flex items-center">
-                            <div class="w-full border-t border-cool-gray-300"></div>
+                            <div
+                                class="w-full border-t border-cool-gray-300"
+                            ></div>
                         </div>
-                        <div class="relative flex justify-center text-sm leading-5">
-                            <span class="px-2 bg-white text-cool-gray-500">Ou continuez avec</span>
+                        <div
+                            class="relative flex justify-center text-sm leading-5"
+                        >
+                            <span class="px-2 bg-white text-cool-gray-500"
+                                >Ou continuez avec</span
+                            >
                         </div>
                     </div>
 
                     <div class="sm:px-2 px-0">
-                        <div class="mt-6 flex flex-wrap justify-between sm:-mx-4 -mx-2 -my-1">
+                        <div
+                            class="mt-6 flex flex-wrap justify-between sm:-mx-4 -mx-2 -my-1"
+                        >
                             <div class="sm:w-1/3 w-full px-2 sm:py-0 py-1">
                                 <a
                                     href
@@ -133,7 +190,48 @@
 </template>
 
 <script>
-export default {}
+import UserService from '@/services/UserService.js'
+
+export default {
+    data() {
+        return {
+            formErrors: {}
+        }
+    },
+    methods: {
+        async register() {
+            try {
+                const response = await UserService.registerUser({
+                    name: 'donval',
+                    firstname: 'test__',
+                    email: 'william.donval@gmail.com',
+                    password: '123456789',
+                    password_confirmation: '123456'
+                })
+                if (response.data.validationMessages) {
+                    this.formErrors = {}
+                    this.createValidationMessagesObject(
+                        response.data.validationMessages
+                    )
+                }
+            } catch (e) {}
+        },
+        createValidationMessagesObject(object) {
+            for (const index in object) {
+                if (this.formErrors[object[index].field]) {
+                    this.formErrors[object[index].field].push(
+                        object[index].message
+                    )
+                } else {
+                    this.formErrors[object[index].field] = []
+                    this.formErrors[object[index].field].push(
+                        object[index].message
+                    )
+                }
+            }
+        }
+    }
+}
 </script>
 
 <style lang="scss" scoped></style>

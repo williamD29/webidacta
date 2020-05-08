@@ -1,33 +1,48 @@
 <template>
     <div class="max-w-lg">
-        <nuxt-link to class="flex justify-center h-16 items-center px-2 text-2xl font-bold">
-            <img src="@/assets/images/webidacta-logo.svg" class="h-12 w-12" alt="Logo Webidacta" />
-        </nuxt-link>
+        <div
+            class="flex justify-center h-16 items-center px-2 text-2xl font-bold"
+        >
+            <nuxt-link to>
+                <img
+                    src="@/assets/images/webidacta-logo.svg"
+                    class="h-12 w-12"
+                    alt="Logo Webidacta"
+                />
+            </nuxt-link>
+        </div>
         <h2 class="text-center text-4xl font-bold mb-4">Connexion</h2>
         <div class="mb-8 text-center">
             Pas encore de compte ?
             <nuxt-link
                 to="register"
                 class="font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:underline transition ease-in-out duration-150"
-            >Inscrivez-vous</nuxt-link>
+                >Inscrivez-vous</nuxt-link
+            >
         </div>
         <div class="sm:px-12 px-8 py-8 bg-white shadow-md rounded-lg w-auto">
             <form class="space-y-6">
                 <label class="block">
-                    <span class="text-cool-gray-700 font-medium">Adresse email</span>
+                    <span class="text-cool-gray-700 font-medium"
+                        >Adresse email</span
+                    >
                     <input
                         type="email"
                         class="form-input mt-1 block w-full focus:shadow-outline-purple focus:border-purple-300 transition duration-150 ease-in-out"
                     />
                 </label>
                 <label class="block">
-                    <span class="text-cool-gray-700 font-medium">Mot de passe</span>
+                    <span class="text-cool-gray-700 font-medium"
+                        >Mot de passe</span
+                    >
                     <input
                         type="email"
                         class="form-input mt-1 block w-full focus:shadow-outline-purple focus:border-purple-300 transition duration-150 ease-in-out"
                     />
                 </label>
-                <div class="mt-6 flex items-center justify-between content-center flex-wrap">
+                <div
+                    class="mt-6 flex items-center justify-between content-center flex-wrap"
+                >
                     <div class="flex items-center">
                         <input
                             id="remember_me"
@@ -37,32 +52,44 @@
                         <label
                             for="remember_me"
                             class="ml-2 block text-sm leading-5 text-cool-gray-900"
-                        >Se souvenir de moi</label>
+                            >Se souvenir de moi</label
+                        >
                     </div>
 
                     <div class="text-sm leading-5 self-center">
                         <a
                             href="#"
                             class="font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:underline transition ease-in-out duration-150"
-                        >Mot de passe oublié ?</a>
+                            >Mot de passe oublié ?</a
+                        >
                     </div>
                 </div>
                 <button
                     type="button"
                     class="flex w-full items-center justify-center px-4 py-2 border border-transparent font-medium rounded-md text-white bg-purple-600 hover:bg-purple-500 focus:outline-none focus:shadow-outline-purple focus:border-purple-700 active:bg-purple-700 transition duration-150 ease-in-out"
-                >Se connecter</button>
+                >
+                    Se connecter
+                </button>
                 <div class="mt-6">
                     <div class="relative">
                         <div class="absolute inset-0 flex items-center">
-                            <div class="w-full border-t border-cool-gray-300"></div>
+                            <div
+                                class="w-full border-t border-cool-gray-300"
+                            ></div>
                         </div>
-                        <div class="relative flex justify-center text-sm leading-5">
-                            <span class="px-2 bg-white text-cool-gray-500">Ou continuez avec</span>
+                        <div
+                            class="relative flex justify-center text-sm leading-5"
+                        >
+                            <span class="px-2 bg-white text-cool-gray-500"
+                                >Ou continuez avec</span
+                            >
                         </div>
                     </div>
 
                     <div class="sm:px-2 px-0">
-                        <div class="mt-6 flex flex-wrap justify-between sm:-mx-4 -mx-2 -my-1">
+                        <div
+                            class="mt-6 flex flex-wrap justify-between sm:-mx-4 -mx-2 -my-1"
+                        >
                             <div class="sm:w-1/3 w-full px-2 sm:py-0 py-1">
                                 <a
                                     href
